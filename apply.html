@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply for Place - Jemedari University</title>
+    <!-- Add your CSS styles here -->
+    <style>
+        /* Add your styles for the application form */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #292929;
+            color: #FFF;
+        }
+
+        .apply-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #363636;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #00FFD1; /* Neon Cyan */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #00FFD1; /* Neon Cyan */
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #00FFD1; /* Neon Cyan */
+            background-color: #363636;
+            color: #FFF;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        input::placeholder {
+            color: #888;
+        }
+
+        select {
+            appearance: none;
+            -moz-appearance: none;
+            -webkit-appearance: none;
+            padding: 12px;
+            background: transparent url('https://image-url.com/arrow-down-icon.png') no-repeat right center;
+            background-size: 18px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #00FFD1; /* Neon Cyan */
+            color: #292929; /* Dark Gray */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #292929; /* Dark Gray */
+            color: #00FFD1; /* Neon Cyan */
+        }
+    </style>
+    <!-- Add SweetAlert2 script -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+</head>
+<body>
+    <div class="apply-container">
+        <h2>Apply for Place</h2>
+        <form action="apply_process.php" method="post" onsubmit="submitForm(event)">
+            <label for="firstname">First Name:</label>
+            <input type="text" id="firstname" name="firstname" required>
+
+            <label for="middlename">Middle Name:</label>
+            <input type="text" id="middlename" name="middlename">
+
+            <label for="lastname">Last Name:</label>
+            <input type="text" id="lastname" name="lastname" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="kcperesults">KCPE MEAN GRADE Results:</label>
+            <select id="kcperesults" name="kcperesults">
+                <option value="A">A</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="B-">B-</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="C-">C-</option>
+            </select>
+
+            <label for="parentphone">Parents' Phone Numbers:</label>
+            <input type="tel" id="momphone" name="momphone" placeholder="Mom's Phone" required>
+            <input type="tel" id="dadphone" name="dadphone" placeholder="Dad's Phone" required>
+
+            <label for="healthproblems">Any Health Problems:</label>
+            <input type="text" id="healthproblems" name="healthproblems">
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" required>
+
+            <button type="submit">Submit Application</button>
+        </form>
+    </div>
+
+    <!-- Add JavaScript code -->
+    <script>
+        function submitForm(event) {
+            event.preventDefault(); // Prevents the form from submitting the traditional way
+
+            // Perform your form submission logic here
+            // For demonstration purposes, let's assume the form is always successfully submitted
+            const isFormSubmittedSuccessfully = true;
+
+            if (isFormSubmittedSuccessfully) {
+                // Show an attractive pop-up message using SweetAlert2
+                Swal.fire({
+                    icon: 'success', // Success icon
+                    title: 'Application Submitted!',
+                    text: 'Thank you for applying. Your application has been submitted successfully.',
+                    confirmButtonColor: '#00FFD1', // Neon Cyan
+                });
+            }
+        }
+    </script>
+</body>
+</html>
